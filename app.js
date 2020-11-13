@@ -53,7 +53,7 @@ btnSubmit.addEventListener('click', (event) => {
   // event.preventDefault();
   userContainer.style.display = 'none';
   mainContainer.classList.remove('ka');
-  name.textContent = `Hi ${username.value}. Keep Tight!!!`;
+  name.textContent = `Hi ${username.value}! Keep Tight.`;
 
 })
 
