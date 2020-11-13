@@ -1,10 +1,10 @@
 const username = document.getElementById('username');
 const userContainer = document.querySelector('.user-container');
 let mainContainer = document.querySelector('.main-container');
-const url = 'https://opentdb.com/api.php?amount=10&type=multiple';
 const greeting = document.querySelector('#greeting');
 const name = document.getElementById('name');
 const btnStart = document.querySelector('.btnStart');
+const select = document.querySelector('select');
 
 
 
@@ -63,12 +63,13 @@ let countDown;
 const getData = async () => {
 
   try {
+    const url = `https://opentdb.com/api.php?amount=50&&category=${select.selectedIndex+9}`;
     let response = await axios.get(url);
+    console.log(response);
     let questionText = response.data.results[1].question;
     let correct_answer = response.data.results[1].correct_answer;
      incorrect_answer = response.data.results[1].incorrect_answers;
     let allAnswers = incorrect_answer.concat(correct_answer);
-    console.log('correct IS',correct_answer);
     // shuffle the array of answers to get random answer
     allAnswers.sort();
     
@@ -149,7 +150,7 @@ const getData = async () => {
 
           if (item.getAttribute('type') === 'true') {
             trueNumber++;
-           console.log('trueNumber: is',trueNumber)
+           
             trueAns.innerHTML = trueNumber;
             item.style.backgroundColor = 'green';
             function remove() {
@@ -161,7 +162,7 @@ const getData = async () => {
           else {
             falseNumber++;
             falseAns.innerHTML = falseNumber;
-            console.log('falseNumber is : ',falseNumber);
+          
             item.style.backgroundColor = 'red';
             let a = document.querySelector('[type="true"]');
             a.style.backgroundColor = 'green';
