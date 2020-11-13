@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="app.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class = "main-container ka">
+<div id="greeting">
+ <p id="name"> Hi Jack Your score is: </p>
+ <div class='trueScore'>
+<p id="stringTrue">True</p>
+<p id="true">0</p>
+ </div>
+ <div class = 'falseScore'>
+<p id='stringFalse'>False</p>
+<p id="false">0</p>
+ </div>
+</div>
+<div class='bonus'>
+<div class="addSeconds">+5 Seconds</div>
+<div class="removeBonus">Remove Wrong Answer</div>
+<div class="skip">Skip The Question</div>
+</div>
+<div id='clock'>10</div>
+<div id = "questionBox">
+  <div id = 'question'>Question</div>
+  <div id="answers">
+    
+  </div>
+</div>
+
+
+
+  </div>
+  <div class = "user-container">
+    <input type="text" id="username" placeholder="Enter Your Name">
+    <button type="submit" id="btnSubmit">Submit</button>
+  </div>
+</body>
+</html>
