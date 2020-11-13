@@ -4,6 +4,8 @@ let mainContainer = document.querySelector('.main-container');
 const url = 'https://opentdb.com/api.php?amount=10&type=multiple';
 const greeting = document.querySelector('#greeting');
 const name = document.getElementById('name');
+const btnStart = document.querySelector('.btnStart');
+
 
 
 const question = document.querySelector('#question');
@@ -183,20 +185,29 @@ const getData = async () => {
     console.log(error);
   }
 }
-getData();
 
 
-function setIntervalX(callback, delay, repetitions) {
-  var x = 0;
-  var intervalID = window.setInterval(function () {
+btnStart.addEventListener('click', function () {
+  if (btnStart.className === 'btnStart') {
+    getData();
+    btnAdd.style.transition = 'red';
+    btnStart.className = 'btnStartActive';
 
-     callback();
+  }
+});
 
-     if (++x === repetitions) {
-         window.clearInterval(intervalID);
-     }
-  }, delay);
-}
-setIntervalX(function () {
-  // Your logic here
-}, 1000, 5);
+
+// function setIntervalX(callback, delay, repetitions) {
+//   var x = 0;
+//   var intervalID = window.setInterval(function () {
+
+//      callback();
+
+//      if (++x === repetitions) {
+//          window.clearInterval(intervalID);
+//      }
+//   }, delay);
+// }
+// setIntervalX(function () {
+//   // Your logic here
+// }, 1000, 5);

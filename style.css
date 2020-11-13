@@ -8,8 +8,9 @@
   display:flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; 
-
+  flex-direction: column;
+  background-image: url('https://i.pinimg.com/564x/c5/73/c5/c573c5c8554045f53baf554d4b9fa91c.jpg');
+  background-size: cover;
 }
 
 .main-container{
@@ -226,4 +227,24 @@ background-color:#eaf6ff;
 .bonus{
   display: flex;
   flex-direction: column;
+}
+.btnStart{
+  border-radius: 25px;
+height: 60px;
+width: 150px;
+margin-top: 15px;
+border: 1px solid orange;
+background-color:#eaf6ff;
+margin-left: 2%;
+}
+.btnStartActive{
+  border-radius: 25px;
+height: 50px;
+width: 100px;
+margin-top: 15px;
+border: 1px solid orange;
+background-color:#db3a34;
+margin-left: 2%;
+color:white;
+
 }
