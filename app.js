@@ -41,11 +41,11 @@ skip.addEventListener('click', function () {
 });
 
 // temporary hold, comment the section to switch full version of the game
-// let body = document.querySelector('body');
-// body.onload = () => {
-//   userContainer.style.display = 'none';
-//   mainContainer.classList.remove('ka');
-// }
+let body = document.querySelector('body');
+body.onload = () => {
+  userContainer.style.display = 'none';
+  mainContainer.classList.remove('ka');
+}
 
 
 let btnSubmit = document.getElementById('btnSubmit');

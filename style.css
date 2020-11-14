@@ -41,7 +41,6 @@ margin-top: 15px;
 .main-container{
   height: 100%;
   width: 100%;
-
   display: flex;
   flex-direction:column;
  background-color: #CBF3F0;
@@ -188,8 +187,6 @@ height: 45px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  
 }
 #question{
   color:#16697a;
@@ -258,3 +255,34 @@ margin-left: 2%;
 color:white;
 
 }
+
+@media only screen and (max-width: 600px) {
+  #greeting{
+ border:1px solid orange;
+  }
+  .bonus{
+    flex-direction: row;
+    justify-content:center;
+    margin-right: 2%;
+  }
+  .main-container{
+    height: 100vh;
+    border: 1px solid orange;
+    padding: 0;
+    margin: 0;
+  }
+  .btnStart{
+    margin-top:88px;
+  }
+  #questionBox{
+    width: 100%;
+    height: 70%;
+    margin-top: auto;
+    margin-bottom:0px;
+  }
+  .falseScore{
+    align-self: flex-sta;
+  }
+}
+
+
