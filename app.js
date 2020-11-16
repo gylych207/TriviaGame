@@ -5,6 +5,7 @@ const greeting = document.querySelector('#greeting');
 const name = document.getElementById('name');
 const btnStart = document.querySelector('.btnStart');
 const select = document.querySelector('select');
+const body = document.querySelector('body');
 
 
 
@@ -127,9 +128,7 @@ const getData = async () => {
           div.setAttribute('type','false');
         answers.append(div);
         }
-        // if ((trueNumber + falseNumber) === 2) {
-        //   return;
-        // }
+       
       }
     }
     questionBuilder();
@@ -156,6 +155,9 @@ const getData = async () => {
     let falseAns = document.getElementById('false');
     let trueNumber = parseInt(trueAns.innerHTML);
     let falseNumber = parseInt(falseAns.innerHTML);
+   
+
+
     answer.forEach((item) => {
       item.addEventListener('click', function () {
         let clock = document.getElementById('clock');
@@ -171,7 +173,7 @@ const getData = async () => {
               answers.innerHTML = '';
             }
             setTimeout(remove, '1000');
-            setTimeout(getData,'1200');
+            setTimeout(getData,'1100');
           }
           else {
             falseNumber++;
@@ -184,19 +186,20 @@ const getData = async () => {
               answers.innerHTML = '';
             }
             setTimeout(remove, '1000');
-            setTimeout(getData,'1200');
+            setTimeout(getData,'1100');
           }
         }
           else if(clock.textContent <= 0){
           clock.textContent = 'YOU LOST';
           clock.style.color = 'red';
         }
+
        
 
 
       });
     });
-
+  
   } catch (error) {
     console.log(error);
   }

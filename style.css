@@ -2,6 +2,7 @@ body{
   background-image : url('https://i.pinimg.com/564x/c5/73/c5/c573c5c8554045f53baf554d4b9fa91c.jpg'); 
   background-size: cover;
 }
+
 .user-container{
   height: 100%;
   width: 100%;
@@ -273,11 +274,11 @@ margin-left: 2%;
   }
   .btnStart{
     margin-top:10px;
-    margin-left: 25%;
+    margin-left: 33%;
   }
   .btnStartActive{
     margin-top:10px;
-    margin-left: 25%;
+    margin-left: 33%;
   }
   #questionBox{
     width: 100%;
