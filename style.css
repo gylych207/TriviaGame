@@ -18,10 +18,10 @@ body{
 select{
 border-radius: 25px;
 border: 1px solid #ee964b;
-height: 30px;
+height: 35px;
+margin-top: 10px;
 width: 300px;
 text-align: center;
-margin-top: 15px;
 }
 #username{
   border-radius: 25px;

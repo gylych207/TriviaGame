@@ -137,7 +137,7 @@ const getData = async () => {
     let removeBonus = document.querySelector('.removeBonus');
     removeBonus.addEventListener('click', function () {
       if (removeBonus.className === 'removeBonus') {
-        removeBonus.classList.add('removeBonusActive');
+        removeBonus.className = 'removeBonusActive';
         let ff = document.querySelectorAll('[type="false"]');
         ff[0].style.display = 'none';
         ff[2].style.display = 'none';  
