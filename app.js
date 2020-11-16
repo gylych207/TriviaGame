@@ -43,18 +43,22 @@ skip.addEventListener('click', function () {
 });
 
 // temporary hold, comment the section to switch full version of the game
-let body = document.querySelector('body');
-body.onload = () => {
-  userContainer.style.display = 'none';
-  mainContainer.classList.remove('ka');
-}
+// let body = document.querySelector('body');
+// body.onload = () => {
+//   userContainer.style.display = 'none';
+//   mainContainer.classList.remove('ka');
+//   document.body.style.backgroundImage = "url('https://i.pinimg.com/564x/c5/73/c5/c573c5c8554045f53baf554d4b9fa91c.jpg')"; 
+// }
 
 
 let btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.addEventListener('click', (event) => {
+  let body = document.querySelector('body');
   // event.preventDefault();
   userContainer.style.display = 'none';
   mainContainer.classList.remove('ka');
+  body.style.background = 'none';
+  body.style.backgroundColor = '#CBF3F0';
   name.textContent = `Hi ${username.value}! Keep Tight.`;
 
 })

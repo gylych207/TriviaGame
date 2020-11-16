@@ -1,4 +1,7 @@
-
+body{
+  background-image : url('https://i.pinimg.com/564x/c5/73/c5/c573c5c8554045f53baf554d4b9fa91c.jpg'); 
+  background-size: cover;
+}
 .user-container{
   height: 100%;
   width: 100%;
@@ -9,7 +12,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('https://i.pinimg.com/564x/c5/73/c5/c573c5c8554045f53baf554d4b9fa91c.jpg');
   background-size: cover;
 }
 select{
@@ -44,6 +46,8 @@ margin-top: 15px;
   display: flex;
   flex-direction:column;
  background-color: #CBF3F0;
+ margin: 0;
+ padding: 0;
   
 }
 
