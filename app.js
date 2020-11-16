@@ -67,6 +67,7 @@ btnSubmit.addEventListener('click', (event) => {
 
 let interval;
 let countDown;
+//////////////////////////////////////
 const getData = async () => {
 
   try {
@@ -79,10 +80,6 @@ const getData = async () => {
     let allAnswers = incorrect_answer.concat(correct_answer);
     // shuffle the array of answers to get random answer
     allAnswers = allAnswers.sort();
-    
-
-
-
 
 
     question.textContent = questionText;
@@ -93,7 +90,7 @@ const getData = async () => {
       let clock = document.getElementById('clock');
       clock.textContent='';
       clearInterval(interval);
-       countDown = 5;
+       countDown = 10;
       function count() {
         clock.textContent = countDown;
       
@@ -110,7 +107,7 @@ const getData = async () => {
 
     
 
-    //Create DIV, ANS, QUESTIONS
+    //Create DIV, ANS
     
     function questionBuilder() {
       for (let i = 0; i < allAnswers.length;i++){
@@ -137,7 +134,7 @@ const getData = async () => {
     let removeBonus = document.querySelector('.removeBonus');
     removeBonus.addEventListener('click', function () {
       if (removeBonus.className === 'removeBonus') {
-        removeBonus.className = 'removeBonusActive';
+        removeBonus.classList.add('removeBonusActive');
         let ff = document.querySelectorAll('[type="false"]');
         ff[0].style.display = 'none';
         ff[2].style.display = 'none';  
@@ -155,9 +152,6 @@ const getData = async () => {
     let falseAns = document.getElementById('false');
     let trueNumber = parseInt(trueAns.innerHTML);
     let falseNumber = parseInt(falseAns.innerHTML);
-   
-
-
     answer.forEach((item) => {
       item.addEventListener('click', function () {
         let clock = document.getElementById('clock');
@@ -172,8 +166,8 @@ const getData = async () => {
             function remove() {
               answers.innerHTML = '';
             }
-            setTimeout(remove, '1000');
-            setTimeout(getData,'1100');
+            // setTimeout(remove, '1000');
+            // setTimeout(getData,'1100');
           }
           else {
             falseNumber++;
@@ -185,11 +179,27 @@ const getData = async () => {
             function remove() {
               answers.innerHTML = '';
             }
-            setTimeout(remove, '1000');
-            setTimeout(getData,'1100');
+           
+          }
+
+          setTimeout(remove, '1000');
+          
+          if (trueNumber+falseNumber !== 2) {
+            
+            setTimeout(getData, '1100');
+
+          }
+          else {
+            clearInterval(interval);
+            clock.innerHTML = '';
+            question.innerHTML = trueNumber > falseNumber ? 'YOU WIN' : 'YOU LOSE';
+            question.innerHTML = trueNumber === falseNumber ? '??????' : question.innerHTML;
+            
+            
           }
         }
-          else if(clock.textContent <= 0){
+
+        else if (clock.textContent <= 0) {
           clock.textContent = 'YOU LOST';
           clock.style.color = 'red';
         }
@@ -200,6 +210,7 @@ const getData = async () => {
       });
     });
   
+
   } catch (error) {
     console.log(error);
   }
