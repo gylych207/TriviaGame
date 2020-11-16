@@ -41,11 +41,11 @@ skip.addEventListener('click', function () {
 });
 
 // temporary hold, comment the section to switch full version of the game
-let body = document.querySelector('body');
-body.onload = () => {
-  userContainer.style.display = 'none';
-  mainContainer.classList.remove('ka');
-}
+// let body = document.querySelector('body');
+// body.onload = () => {
+//   userContainer.style.display = 'none';
+//   mainContainer.classList.remove('ka');
+// }
 
 
 let btnSubmit = document.getElementById('btnSubmit');
@@ -71,7 +71,7 @@ const getData = async () => {
      incorrect_answer = response.data.results[1].incorrect_answers;
     let allAnswers = incorrect_answer.concat(correct_answer);
     // shuffle the array of answers to get random answer
-    allAnswers.sort();
+    allAnswers = allAnswers.sort();
     
     question.textContent = questionText;
 
@@ -81,7 +81,7 @@ const getData = async () => {
       let clock = document.getElementById('clock');
       clock.textContent='';
       clearInterval(interval);
-       countDown = 10;
+       countDown = 15;
       function count() {
         clock.textContent = countDown;
       
@@ -157,7 +157,7 @@ const getData = async () => {
               answers.innerHTML = '';
             }
             setTimeout(remove, '1000');
-            setTimeout(getData,'1000');
+            setTimeout(getData,'1200');
           }
           else {
             falseNumber++;
@@ -170,7 +170,7 @@ const getData = async () => {
               answers.innerHTML = '';
             }
             setTimeout(remove, '1000');
-            setTimeout(getData,'1000');
+            setTimeout(getData,'1200');
           }
         }
         else {
@@ -191,13 +191,14 @@ const getData = async () => {
 btnStart.addEventListener('click', function () {
   if (btnStart.className === 'btnStart') {
     getData();
-    btnAdd.style.transition = 'red';
     btnStart.className = 'btnStartActive';
-
+    setTimeout(btnRemove,2000);
   }
 });
 
-
+function btnRemove() {
+  btnStart.remove();
+}
 // function setIntervalX(callback, delay, repetitions) {
 //   var x = 0;
 //   var intervalID = window.setInterval(function () {

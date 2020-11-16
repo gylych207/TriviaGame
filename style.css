@@ -64,31 +64,29 @@ margin-top: 15px;
   color:#2c6e49;
 }
 .addSeconds{
-margin-left: 2%;
-font-size: 20px;
-margin-top: 50px;
-text-align:center;
-border-radius: 15px;
-width: 20%;
-font-size: 30px;
-background-color:#235789;
-color:#fdfffc;
-transition: width 1s;
+  margin-left: 2%;
+  font-size: 30px;
+  margin-top: 10px;
+  text-align:center;
+  border-radius: 15px;
+  width: 30%;
+  background-color:#235789;
+  color:#fdfffc;
+  transition: width 1s;
 }
 .addSeconds:hover{
   width:40%;
 }
 .addSecondsActive{
   margin-left: 2%;
-  margin-top: 50px;
+  font-size: 30px;
+  margin-top: 10px;
   text-align:center;
   border-radius: 15px;
-  width: 20%;
-  font-size: 30px;
+  width: 30%;
   background-color:#235789;
   color:#f3665d;
   transition: width 1s;
-
 }
 .removeBonus{
   margin-left: 2%;
@@ -240,20 +238,18 @@ height: 45px;
 height: 60px;
 width: 150px;
 margin-top: 15px;
-border: 1px solid orange;
+border: 2px solid green;
 background-color:#eaf6ff;
 margin-left: 2%;
 }
 .btnStartActive{
-  border-radius: 25px;
-height: 50px;
-width: 100px;
+border-radius: 25px;
+height: 60px;
+width: 150px;
 margin-top: 15px;
-border: 1px solid orange;
-background-color:#db3a34;
+border: 2px solid red;
+background-color:#eaf6ff;
 margin-left: 2%;
-color:white;
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -266,7 +262,6 @@ color:white;
     margin-right: 2%;
   }
   .main-container{
-    height: 100vh;
     border: 1px solid orange;
     padding: 0;
     margin: 0;
@@ -280,9 +275,8 @@ color:white;
     margin-top: auto;
     margin-bottom:0px;
   }
-  .falseScore{
-    align-self: flex-sta;
-  }
+
+ 
 }
 
 
