@@ -17,6 +17,8 @@ const ans4 = document.querySelector('.answer4');
 let truAns = document.querySelector('#true');
 let btnAdd = document.querySelector('.addSeconds');
 
+// sum of true and false
+
 
 // Add seconds
 btnAdd.addEventListener('click', function () {
@@ -41,11 +43,11 @@ skip.addEventListener('click', function () {
 });
 
 // temporary hold, comment the section to switch full version of the game
-// let body = document.querySelector('body');
-// body.onload = () => {
-//   userContainer.style.display = 'none';
-//   mainContainer.classList.remove('ka');
-// }
+let body = document.querySelector('body');
+body.onload = () => {
+  userContainer.style.display = 'none';
+  mainContainer.classList.remove('ka');
+}
 
 
 let btnSubmit = document.getElementById('btnSubmit');
@@ -73,6 +75,11 @@ const getData = async () => {
     // shuffle the array of answers to get random answer
     allAnswers = allAnswers.sort();
     
+
+
+
+
+
     question.textContent = questionText;
 
     // clock
@@ -81,7 +88,7 @@ const getData = async () => {
       let clock = document.getElementById('clock');
       clock.textContent='';
       clearInterval(interval);
-       countDown = 15;
+       countDown = 5;
       function count() {
         clock.textContent = countDown;
       
@@ -116,6 +123,9 @@ const getData = async () => {
           div.setAttribute('type','false');
         answers.append(div);
         }
+        // if ((trueNumber + falseNumber) === 2) {
+        //   return;
+        // }
       }
     }
     questionBuilder();
@@ -126,7 +136,7 @@ const getData = async () => {
       if (removeBonus.className === 'removeBonus') {
         removeBonus.classList.add('removeBonusActive');
         let ff = document.querySelectorAll('[type="false"]');
-        ff[1].style.display = 'none';
+        ff[0].style.display = 'none';
         ff[2].style.display = 'none';  
       }
      
@@ -173,11 +183,12 @@ const getData = async () => {
             setTimeout(getData,'1200');
           }
         }
-        else {
+          else if(clock.textContent <= 0){
           clock.textContent = 'YOU LOST';
-
+          clock.style.color = 'red';
         }
-        
+       
+
 
       });
     });
@@ -199,6 +210,8 @@ btnStart.addEventListener('click', function () {
 function btnRemove() {
   btnStart.remove();
 }
+
+
 // function setIntervalX(callback, delay, repetitions) {
 //   var x = 0;
 //   var intervalID = window.setInterval(function () {
