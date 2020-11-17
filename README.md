@@ -64,7 +64,8 @@ incorrect_answers: [
 | Filtering The data for categories etc    | 3:Hour   | 3:Hours |
 | Applying JS for Bonuses:    | 3:Hour   | 3:Hours |
 | Applying CSS for True/False answers:    |  2:Hour    | 1:Hour |
-| Total:    |  15:Hour   | 14.4 Hour |
+| Combining all functions to be full functional    |  N/A    | 10:Hour |
+| Total:    |  15:Hour   | 24.4 Hour |
 
 
 
