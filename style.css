@@ -8,7 +8,6 @@ body{
   width: 100%;
   height:100vh;
   margin:0px;
-  /* background-color:#9ad3bc; */
   display:flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +69,7 @@ text-align: center;
 }
 .addSeconds{
   margin-left: 2%;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 10px;
   text-align:center;
   border-radius: 15px;
@@ -78,13 +77,17 @@ text-align: center;
   background-color:#235789;
   color:#fdfffc;
   transition: width 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .addSeconds:hover{
   width:40%;
 }
 .addSecondsActive{
   margin-left: 2%;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 10px;
   text-align:center;
   border-radius: 15px;
@@ -95,7 +98,7 @@ text-align: center;
 }
 .removeBonus{
   margin-left: 2%;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 10px;
   text-align:center;
   border-radius: 15px;
@@ -107,7 +110,7 @@ text-align: center;
 }
 .removeBonusActive{
   margin-left: 2%;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 10px;
   text-align:center;
   border-radius: 15px;
@@ -121,7 +124,7 @@ text-align: center;
 }
 .skip{
   margin-left: 2%;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 10px;
   text-align:center;
   border-radius: 15px;
@@ -129,11 +132,14 @@ text-align: center;
   background-color:#235789;
   color:#fdfffc;
   transition: width 1s;
-  
 }
+/* .skip span,.removeBonus span,.addSeconds span{
+  display: block;
+  margin: 0 20px;
+} */
 .skipActive{
   margin-left: 2%;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 10px;
   text-align:center;
   border-radius: 15px;

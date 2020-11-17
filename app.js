@@ -18,10 +18,9 @@ const ans4 = document.querySelector('.answer4');
 let truAns = document.querySelector('#true');
 let btnAdd = document.querySelector('.addSeconds');
 
-// sum of true and false
 
 
-// Add seconds
+// Add seconds bonus
 btnAdd.addEventListener('click', function () {
   if (btnAdd.className === 'addSeconds') {
     countDown = countDown + 5;
@@ -29,18 +28,14 @@ btnAdd.addEventListener('click', function () {
   }
 })
 
-//skip button
+// skip question bonus
 let skip = document.querySelector('.skip');
 skip.addEventListener('click', function () {
   if (skip.className === 'skip') {
     answers.innerHTML = '';
     skip.className = 'skipActive';
-    getData();
-    
+    getData(); 
   }
-  // else {
-  //   alert('YOU HAVE DONE WITH THIS BONUS');
-  // }
 });
 
 // temporary hold, comment the section to switch full version of the game
@@ -60,7 +55,7 @@ btnSubmit.addEventListener('click', (event) => {
   mainContainer.classList.remove('ka');
   body.style.background = 'none';
   body.style.backgroundColor = '#CBF3F0';
-  name.textContent = `Hi ${username.value}! Keep Tight.`;
+  name.textContent = `Hi ${username.value}!.`;
 
 })
 
@@ -78,22 +73,24 @@ const getData = async () => {
     let correct_answer = response.data.results[1].correct_answer;
      incorrect_answer = response.data.results[1].incorrect_answers;
     let allAnswers = incorrect_answer.concat(correct_answer);
+    
     // shuffle the array of answers to get random answer
     allAnswers = allAnswers.sort();
 
-
+    // Question Builder
     question.textContent = questionText;
+    question.style.marginLeft = '2%';
+    question.style.marginRight = '2%';
 
-    // clock
     
+    // Timer Coundown
     function clock() {
       let clock = document.getElementById('clock');
       clock.textContent='';
       clearInterval(interval);
-       countDown = 10;
+       countDown = 15;
       function count() {
         clock.textContent = countDown;
-      
         if (countDown === 0) {
           clearInterval(interval);
         }
@@ -103,12 +100,8 @@ const getData = async () => {
     }
     clock();
 
-   
 
-    
-
-    //Create DIV, ANS
-    
+    // Create Answers
     function questionBuilder() {
       for (let i = 0; i < allAnswers.length;i++){
         if (allAnswers[i] === correct_answer) {
@@ -130,6 +123,7 @@ const getData = async () => {
     }
     questionBuilder();
     
+
     //Remove Bonus;
     let removeBonus = document.querySelector('.removeBonus');
     removeBonus.addEventListener('click', function () {
@@ -142,10 +136,6 @@ const getData = async () => {
      
     })
     
-   
-  
-   
-    
     // Create Event Listener for each answer. Green and Red.
     let answer = document.querySelectorAll('.answer');
     let trueAns = document.getElementById('true');
@@ -155,6 +145,7 @@ const getData = async () => {
     answer.forEach((item) => {
       item.addEventListener('click', function () {
         let clock = document.getElementById('clock');
+        
        
         if (clock.textContent > 0) {
 
@@ -163,19 +154,20 @@ const getData = async () => {
            
             trueAns.innerHTML = trueNumber;
             item.style.backgroundColor = 'green';
+            item.style.color = 'white';
             function remove() {
               answers.innerHTML = '';
             }
-            // setTimeout(remove, '1000');
-            // setTimeout(getData,'1100');
           }
           else {
             falseNumber++;
             falseAns.innerHTML = falseNumber;
           
             item.style.backgroundColor = 'red';
+            item.style.color = 'white'
             let a = document.querySelector('[type="true"]');
             a.style.backgroundColor = 'green';
+            a.style.color = 'white';
             function remove() {
               answers.innerHTML = '';
             }
@@ -193,20 +185,17 @@ const getData = async () => {
             clearInterval(interval);
             clock.innerHTML = '';
             question.innerHTML = trueNumber > falseNumber ? 'YOU WIN' : 'YOU LOSE';
-            question.innerHTML = trueNumber === falseNumber ? '??????' : question.innerHTML;
-            
-            
+            question.style.justifyContent = 'center';
+            question.innerHTML = trueNumber === falseNumber ? 'TRY AGAIN' : question.innerHTML;
+
           }
         }
-
         else if (clock.textContent <= 0) {
-          clock.textContent = 'YOU LOST';
+          clock.textContent = 'YOU LOSE';
+          clock.style.justifyContent = 'center';
           clock.style.color = 'red';
         }
-
        
-
-
       });
     });
   
@@ -228,19 +217,3 @@ btnStart.addEventListener('click', function () {
 function btnRemove() {
   btnStart.remove();
 }
-
-
-// function setIntervalX(callback, delay, repetitions) {
-//   var x = 0;
-//   var intervalID = window.setInterval(function () {
-
-//      callback();
-
-//      if (++x === repetitions) {
-//          window.clearInterval(intervalID);
-//      }
-//   }, delay);
-// }
-// setIntervalX(function () {
-//   // Your logic here
-// }, 1000, 5);
