@@ -31,10 +31,9 @@ incorrect_answers: [
 * Keep track of score.
 
 - **Post-MVP**: A list of additional/advanced features you would like to include in your app after you have met MVP.
-* User selects the category and difficulty.
+* User selects the category of questions.
 * Cound Down timer for each question.
 * Adding some helper bonuses .. adding some extra time, eleminate 2 wrong answers etc..
-* adding some sound effects for true / false questions.
 
 - **Goals**: 
 
@@ -58,15 +57,15 @@ incorrect_answers: [
 
 | Pieces | Planned      | Spend       |
 |---------------------------|---       |---         |
-| Basic Html & Css::  | 1.5:Hour   | N/A |
-| CSS transition:  | 2:Hour   | N/A |
-| Creating Coundown Timer with style:          | 2:Hour  | N/A |
-| Getting/populating data from API :        | 1.5:Hour  | N/A |
-| Filtering The data for categories etc    | 3:Hour   | N/A |
-| Applying JS for Bonuses:    | 3:Hour   | N/A |
-| Applying CSS for True/False answers:    |  2:Hour    | N/A |
-| Saving the data in local storage:    |  2:Hour   | N/A |
-| Total:    |  17:Hour   | N/A |
+| Basic Html & Css::  | 1.5:Hour   | 1.5:Hours |
+| CSS transition:  | 2:Hour   | 1:hour |
+| Creating Coundown Timer with style:          | 2:Hour  | 4:hours |
+| Getting/populating data from API :        | 1.5:Hour  | 1:Hour |
+| Filtering The data for categories etc    | 3:Hour   | 3:Hours |
+| Applying JS for Bonuses:    | 3:Hour   | 3:Hours |
+| Applying CSS for True/False answers:    |  2:Hour    | 1:Hour |
+| Combining all functions to be full functional    |  N/A    | 10:Hour |
+| Total:    |  15:Hour   | 24.4 Hour |
 
 
 
