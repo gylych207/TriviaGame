@@ -31,10 +31,9 @@ incorrect_answers: [
 * Keep track of score.
 
 - **Post-MVP**: A list of additional/advanced features you would like to include in your app after you have met MVP.
-* User selects the category and difficulty.
+* User selects the category of questions.
 * Cound Down timer for each question.
 * Adding some helper bonuses .. adding some extra time, eleminate 2 wrong answers etc..
-* adding some sound effects for true / false questions.
 
 - **Goals**: 
 
