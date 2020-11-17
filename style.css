@@ -133,10 +133,7 @@ text-align: center;
   color:#fdfffc;
   transition: width 1s;
 }
-/* .skip span,.removeBonus span,.addSeconds span{
-  display: block;
-  margin: 0 20px;
-} */
+
 .skipActive{
   margin-left: 2%;
   font-size: 25px;
@@ -265,7 +262,7 @@ margin-left: 2%;
 
 @media only screen and (max-width: 600px) {
   #greeting{
- border:1px solid orange;
+
   }
   .bonus{
     flex-direction: row;
@@ -273,7 +270,7 @@ margin-left: 2%;
     margin-right: 2%;
   }
   .main-container{
-    border: 1px solid orange;
+
     padding: 0;
     margin: 0;
     height: 100vh;
