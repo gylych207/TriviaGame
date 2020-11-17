@@ -38,24 +38,14 @@ skip.addEventListener('click', function () {
   }
 });
 
-// temporary hold, comment the section to switch full version of the game
-// let body = document.querySelector('body');
-// body.onload = () => {
-//   userContainer.style.display = 'none';
-//   mainContainer.classList.remove('ka');
-//   document.body.style.backgroundImage = "url('https://i.pinimg.com/564x/c5/73/c5/c573c5c8554045f53baf554d4b9fa91c.jpg')"; 
-// }
-
-
 let btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.addEventListener('click', (event) => {
   let body = document.querySelector('body');
-  // event.preventDefault();
   userContainer.style.display = 'none';
   mainContainer.classList.remove('ka');
   body.style.background = 'none';
   body.style.backgroundColor = '#CBF3F0';
-  name.textContent = `Hi ${username.value}!.`;
+  name.textContent = `Hi ${username.value}! You have 10 Questions`;
 
 })
 
@@ -75,7 +65,8 @@ const getData = async () => {
     let allAnswers = incorrect_answer.concat(correct_answer);
     
     // shuffle the array of answers to get random answer
-    allAnswers = allAnswers.sort();
+    // get freom:  https://medium.com/@nitinpatel_20236/how-to-shuffle-correctly-shuffle-an-array-in-javascript-15ea3f84bfb
+    allAnswers = allAnswers.sort(function (a, b) { return 0.5 -Math.random() })
 
     // Question Builder
     question.textContent = questionText;
@@ -176,7 +167,7 @@ const getData = async () => {
 
           setTimeout(remove, '1000');
           
-          if (trueNumber+falseNumber !== 2) {
+          if (trueNumber+falseNumber !== 10) {
             
             setTimeout(getData, '1100');
 
